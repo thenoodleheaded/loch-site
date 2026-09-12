@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loch for Android — Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <p class="meta">Loch for Android</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated 12 September 2026</p>
+</header>
+
+<p class="lede">Loch helps you put a wall in front of the apps you keep opening by reflex. It has no account, no server, and no analytics. This page explains exactly what happens to information while you use it. There is a <a href="privacy.html">separate policy for Loch on iPhone</a>, because the two versions ask your phone for different things.</p>
+
+<div class="card">
+  <p><strong>The short version.</strong> Loch reads the name of the app in front of you, so it knows when to put the wall up. That reading happens on your phone and is never sent anywhere. The only data that leaves the device is what Google's ad service needs to show an ad, and a tip is handled entirely by Google Play.</p>
+</div>
+
+<h2>The accessibility service</h2>
+<p>Android has no equivalent of Screen Time, and no other way for an app to notice the moment a different app opens. So Loch's wall is built on an accessibility service, which you switch on yourself in Settings. Android shows a strongly worded warning when you do, because that permission <em>can</em> grant an app very broad access. Here is precisely what Loch asks for and what it does with it.</p>
+<ul>
+  <li>Loch subscribes to a single event, <code>typeWindowStateChanged</code>, and reads a single field from it: the package name of the app that just came to the front.</li>
+  <li>Loch does <strong>not</strong> request permission to retrieve window content. It cannot read what is on your screen — not text, not images, not form fields.</li>
+  <li>Loch does <strong>not</strong> request key-event filtering. It never sees a keystroke.</li>
+  <li>The package name is compared against your own list of blocked apps and then discarded. It is not written to disk, not logged, and not transmitted.</li>
+  <li>Loch does not declare itself an accessibility tool, because it isn't one. It is a self-control app that needs this API for the one thing the API can tell it.</li>
+</ul>
+<p>Switch the service off in Settings and Loch stops blocking anything. It will tell you so on its home screen rather than pretending otherwise.</p>
+
+<h2>What stays on your device</h2>
+
+<h3>The apps you block</h3>
+<p>You pick them from a list of the apps installed on your phone. The list, your open unlocks, and your record of unlocks and of times you backed out are stored in Loch's own private files. None of it is transmitted, backed up to us, or readable by any other app.</p>
+<p>Loch asks Android which apps have a launcher icon, so it has something to offer you in the picker. It does not use the <code>QUERY_ALL_PACKAGES</code> permission, so apps without a launcher entry stay invisible to it.</p>
+
+<h3>Notifications</h3>
+<p>Loch posts local notifications — the warning a minute before an unlock ends, and the way back into Loch from a blocked app. They are created and delivered on your device. There is no push server.</p>
+
+<h2>Advertising</h2>
+<p>Loch is free, and ads inside the unlock wait pay for it. Ads are served by Google AdMob, together with Google's User Messaging Platform for consent.</p>
+<ul>
+  <li>Google's Mobile Ads SDK collects and shares your IP address, your advertising ID and App Set ID, your interactions with ads, and diagnostic information, for advertising, analytics and fraud prevention. This is described in <a href="https://business.safety.google/privacy/" rel="noopener">Google's business data policy</a>.</li>
+  <li>Where the law requires consent — the EEA, the UK, Switzerland and similar regions — a consent form appears before any ad is requested. You can reopen it any time from <strong>Ad privacy choices</strong> in the tip sheet.</li>
+  <li>You can reset or delete your advertising ID in Settings › Privacy › Ads, which limits how ads are personalised.</li>
+  <li>Loch itself never sends Google, or anyone, information about which apps you block or unlock.</li>
+</ul>
+<p>If you leave a tip, ads are switched off permanently and Loch stops requesting them at all.</p>
+
+<h2>Tips</h2>
+<p>Tips are Google Play in-app purchases. Google processes the payment; Loch never sees your name, card, or address. All Loch records is that a tip exists, so that ads stay off — kept on your device and, through your Google account, restorable after a reinstall or on another phone. Google's handling of the transaction is covered by the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
+
+<h2>What we collect</h2>
+<p>Nothing. Loch has no user accounts, no sign-in, no crash reporting, no analytics SDK, and no backend of its own. We cannot identify you, and we receive no usage data. Aggregate, anonymous figures about ad performance and installs are visible to us in Google's dashboards, and neither identifies individual people.</p>
+
+<h2>Children</h2>
+<p>Loch is designed for people setting limits for themselves. It is not directed at children, we do not knowingly collect information from them, and ad content is restricted to Google's <em>General</em> rating.</p>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Stop the blocking:</strong> switch Loch's service off in Settings › Accessibility, or uninstall Loch.</li>
+  <li><strong>Change your consent answer:</strong> tap <strong>Ad privacy choices</strong> in the tip sheet, where that form applies.</li>
+  <li><strong>Limit ad personalisation:</strong> reset or delete your advertising ID in Settings › Privacy › Ads.</li>
+  <li><strong>Remove ads entirely:</strong> leave any tip.</li>
+  <li><strong>Delete everything:</strong> uninstall Loch. Its private files, including your list of blocked apps and all history, go with it. Nothing of yours remains anywhere else, because nothing was sent anywhere else.</li>
+</ul>
+
+<h2>Changes</h2>
+<p>If this policy changes, the date at the top changes with it, and a material change will be noted in the Play release notes.</p>
+
+<h2>Contact</h2>
+<p>Questions about privacy in Loch: <a href="mailto:justanotherflyingmount@gmail.com">justanotherflyingmount@gmail.com</a>.</p>
+
+<nav><a href="index.html">Loch</a><a href="support.html">Support</a><a href="privacy.html">iPhone privacy</a></nav>
+<footer>Loch is an independent app. Not affiliated with Apple Inc. or Google LLC.</footer>
+</main>
+</body>
+</html>
